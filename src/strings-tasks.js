@@ -196,8 +196,19 @@ function removeLastOccurrences(str, value) {
  *   sumOfCodes('') => 0
  *   sumOfCodes() => 0
  */
-function sumOfCodes(/* str */) {
-  throw new Error('Not implemented');
+function sumOfCodes(str) {
+  if (str === null || str === undefined) {
+    return 0; // Возвращаем 0, если аргумент равен null или не определен
+  }
+  if (typeof str !== 'string') {
+    return 0; // Возвращаем 0, если аргумент не является строкой
+  }
+  let sum = 0;
+  for (let i = 0; i < str.length; i += 1) {
+    sum += str.charCodeAt(i);
+    // charCodeAt для получения кода символа в указанной позиции
+  }
+  return sum;
 }
 
 /**
@@ -211,8 +222,10 @@ function sumOfCodes(/* str */) {
  *   startsWith('Hello World', 'World') => false
  *   startsWith('Hello World', 'Hello') => true
  */
-function startsWith(/* str, substr */) {
-  throw new Error('Not implemented');
+function startsWith(str, substr) {
+  // throw new Error('Not implemented');
+  return str.startsWith(substr);
+  // startsWith() для проверки того, начинается ли строка с определенной подстроки
 }
 
 /**
@@ -226,8 +239,9 @@ function startsWith(/* str, substr */) {
  *   endsWith('Hello World', 'World') => true
  *   endsWith('Hello World', 'Hello') => false
  */
-function endsWith(/* str, substr */) {
-  throw new Error('Not implemented');
+function endsWith(str, substr) {
+  // throw new Error('Not implemented');
+  return str.endsWith(substr);
 }
 
 /**
